@@ -1,0 +1,16 @@
+{
+    "active_time": "Diurnal",
+    "animal_type": "Mammal",
+    "diet": "Fruit, flowers, nectar, gum and small animals",
+    "geo_range": "Eastern Brazil",
+    "habitat": "Tropical rainforest",
+    "id": 76,
+    "image_link": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Leontopithecus_chrysomelas_%28portrait%29.jpg",
+    "latin_name": "Leontopithecus chrysomelas",
+    "length_max": "1.1",
+    "length_min": "0.7",
+    "lifespan": "11",
+    "name": "Golden-headed Lion Tamarin",
+    "weight_max": "1.5",
+    "weight_min": "1"
+}
