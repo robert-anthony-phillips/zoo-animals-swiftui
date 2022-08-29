@@ -9,7 +9,8 @@ import SwiftUI
 
 struct AnimalDetailView: View {
 
-    let viewModel: AnimalDetailViewModel
+    @StateObject var viewModel: AnimalDetailViewModel
+    @StateObject private var settingsRouter = SettingsRouter()
 
     var body: some View {
 
@@ -17,7 +18,7 @@ struct AnimalDetailView: View {
 
             VStack(alignment: .center, spacing: 16) {
 
-                AsyncImage(url: viewModel.thumbnailURL ?? viewModel.imageURL) { image in
+                AsyncImage(url: viewModel.imageURL) { image in
 
                     image.resizable()
 
@@ -44,26 +45,41 @@ struct AnimalDetailView: View {
 
                     Divider().padding([.top, .bottom], 6)
 
-                    AnimalDetailRow(title: "Min weight", detail: viewModel.weightMin)
-                    AnimalDetailRow(title: "Max weight", detail: viewModel.weightMax)
+                    AnimalDetailRow(title: "Min length", detail: viewModel.lengthMin)
+                    AnimalDetailRow(title: "Max length", detail: viewModel.lengthMax)
 
                     Divider().padding([.top, .bottom], 6)
 
-                    AnimalDetailRow(title: "Min length", detail: viewModel.lengthMin)
-                    AnimalDetailRow(title: "Max length", detail: viewModel.lengthMax)
+                    AnimalDetailRow(title: "Min weight", detail: viewModel.weightMin)
+                    AnimalDetailRow(title: "Max weight", detail: viewModel.weightMax)
                 }
             }
             .padding()
+            .sheet(isPresented: $settingsRouter.showSettings) {
+                SettingsView().onDisappear {
+                    readSettings()
+                }
+            }
 
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    // action
+                    settingsRouter.showSettings = true
                 } label: {
                     Image(systemName: "gearshape")
                 }
             }
+        }
+        .onAppear {
+            readSettings()
+        }
+    }
+
+    func readSettings() {
+
+        Task {
+            await viewModel.readSettings()
         }
     }
 }

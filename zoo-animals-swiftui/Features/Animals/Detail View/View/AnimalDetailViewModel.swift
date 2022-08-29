@@ -7,28 +7,22 @@
 
 import Foundation
 
-struct AnimalDetailViewModel {
+class AnimalDetailViewModel: ObservableObject {
 
     let animal: Animal
 
+    @Published var lengthMin = ""
+    @Published var lengthMax = ""
+    @Published var weightMin = ""
+    @Published var weightMax = ""
+
+    var settingsRepository: SettingsRepository
+
     var imageURL: URL? {
 
-        URL(string: animal.imageLink ?? "")
-    }
+        let url = URL(string: animal.imageLink ?? "")
 
-    var thumbnailURL: URL? {
-
-        guard
-            let imageLink = animal.imageLink,
-            let filename = imageURL?.lastPathComponent
-        else {
-            return nil
-        }
-
-        let thumbURL = imageLink.replacingOccurrences(of: "/commons/", with: "/commons/thumb/")
-        let url = "\(thumbURL)/320px-\(filename)"
-
-        return URL(string: url)
+        return url?.asWikimediaResizedURL ?? url
     }
 
     var name: String {
@@ -48,23 +42,59 @@ struct AnimalDetailViewModel {
         animal.diet ?? "Unknown"
     }
 
-    var lengthMin: String {
+    init(animal: Animal,
+         settingsRepository: SettingsRepository = SettingsUserDefaultsRepository()) {
 
-        animal.lengthMin ?? "Unknown"
+        self.animal = animal
+        self.settingsRepository = settingsRepository
+    }
+}
+
+extension AnimalDetailViewModel {
+
+    func readSettings() async {
+
+        let settings = try? await settingsRepository.read()
+
+        lengthMin = lengthDisplay(length: animal.lengthMin, choice: settings?.lengthChoice ?? .feet)
+        lengthMax = lengthDisplay(length: animal.lengthMax, choice: settings?.lengthChoice ?? .feet)
+
+        weightMin = weightDisplay(weight: animal.weightMin, choice: settings?.weightChoice ?? .pounds)
+        weightMax = weightDisplay(weight: animal.weightMax, choice: settings?.weightChoice ?? .pounds)
+    }
+}
+
+private extension AnimalDetailViewModel {
+
+    func weightDisplay(weight: String?, choice: WeightChoice) -> String {
+
+        let displayUnit = choice.displayUnit
+
+        guard let weight = weight else {
+            return "Unknown"
+        }
+
+        guard let doubleValue = Double(weight) else {
+            return "\(weight) \(displayUnit)"
+        }
+
+        let converted = doubleValue * choice.multiplier
+        return "\(String(format: "%.2f", converted)) \(displayUnit)"
     }
 
-    var lengthMax: String {
+    func lengthDisplay(length: String?, choice: LengthChoice) -> String {
 
-        animal.lengthMax ?? "Unknown"
-    }
+        let displayUnit = choice.displayUnit
 
-    var weightMin: String {
+        guard let length = length else {
+            return "Unknown"
+        }
 
-        animal.weightMin ?? "Unknown"
-    }
+        guard let doubleValue = Double(length) else {
+            return "\(length) \(displayUnit)"
+        }
 
-    var weightMax: String {
-
-        animal.weightMax ?? "Unknown"
+        let converted = doubleValue * choice.multiplier
+        return "\(String(format: "%.2f", converted)) \(displayUnit)"
     }
 }

@@ -13,22 +13,9 @@ struct AnimalRowViewModel {
 
     var imageURL: URL? {
 
-        URL(string: animal.imageLink ?? "")
-    }
+        let url = URL(string: animal.imageLink ?? "")
 
-    var thumbnailURL: URL? {
-
-        guard
-            let imageLink = animal.imageLink,
-            let filename = imageURL?.lastPathComponent
-        else {
-            return nil
-        }
-
-        let thumbURL = imageLink.replacingOccurrences(of: "/commons/", with: "/commons/thumb/")
-        let url = "\(thumbURL)/320px-\(filename)"
-
-        return URL(string: url)
+        return url?.asWikimediaResizedURL ?? url
     }
 
     var name: String {

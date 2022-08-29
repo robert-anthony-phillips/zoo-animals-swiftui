@@ -9,13 +9,11 @@ import SwiftUI
 
 @main
 struct zoo_animals_swiftuiApp: App {
-//    let persistenceController = PersistenceController.shared
 
     var body: some Scene {
+
         WindowGroup {
             AnimalListView()
-//            ContentView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct AnimalListView: View {
 
     @StateObject private var viewModel = AnimalListViewModel()
+    @StateObject private var settingsRouter = SettingsRouter()
 
     var body: some View {
 
@@ -30,13 +31,28 @@ struct AnimalListView: View {
             .navigationTitle("Zoo Animals")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                AnimalListToolBar(viewModel: viewModel)
+                AnimalListToolBar(
+                    viewModel: viewModel,
+                    settingsRouter: settingsRouter
+                )
+            }
+            .sheet(isPresented: $settingsRouter.showSettings) {
+                SettingsView()
+            }
+            .refreshable {
+                fetchData()
             }
         }
         .onAppear {
-            Task {
-                await viewModel.fetchAnimals()
-            }
+            fetchData()
+        }
+        .environmentObject(settingsRouter)
+    }
+
+    func fetchData() {
+
+        Task {
+            await viewModel.fetchAnimals()
         }
     }
 }

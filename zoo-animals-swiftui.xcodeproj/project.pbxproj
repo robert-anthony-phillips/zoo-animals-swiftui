@@ -15,6 +15,19 @@
 		D45D34A728B920F900547FF3 /* zoo_animals_swiftuiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45D34A628B920F900547FF3 /* zoo_animals_swiftuiUITests.swift */; };
 		D45D34A928B920F900547FF3 /* zoo_animals_swiftuiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45D34A828B920F900547FF3 /* zoo_animals_swiftuiUITestsLaunchTests.swift */; };
 		D4B42D7928BBF3A800FE8D9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B42D7828BBF3A800FE8D9D /* ContentView.swift */; };
+		D4E58D5128BCB8C6002BF743 /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E58D5028BCB8C6002BF743 /* SettingsRepository.swift */; };
+		D4E58D5528BCB9D8002BF743 /* SettingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E58D5428BCB9D8002BF743 /* SettingType.swift */; };
+		D4E58D5728BCBA64002BF743 /* LengthChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E58D5628BCBA64002BF743 /* LengthChoice.swift */; };
+		D4E58D5928BCBA71002BF743 /* WeightChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E58D5828BCBA71002BF743 /* WeightChoice.swift */; };
+		D4E58D7A28BCC685002BF743 /* SettingsUserDefaultsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E58D7928BCC685002BF743 /* SettingsUserDefaultsRepository.swift */; };
+		D4E58D7F28BCD0B4002BF743 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E58D7E28BCD0B4002BF743 /* Settings.swift */; };
+		D4E58D8228BCD264002BF743 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E58D8128BCD264002BF743 /* UserDefaultsKeys.swift */; };
+		D4E58D8428BCD4AA002BF743 /* SettingsRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E58D8328BCD4AA002BF743 /* SettingsRepositoryError.swift */; };
+		D4E58D8928BCD700002BF743 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E58D8828BCD700002BF743 /* SettingsView.swift */; };
+		D4E58D8B28BCDCF5002BF743 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E58D8A28BCDCF5002BF743 /* SettingsViewModel.swift */; };
+		D4E58D9728BD3D2D002BF743 /* URL+Wikimedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E58D9628BD3D2D002BF743 /* URL+Wikimedia.swift */; };
+		D4E58D9928BD4066002BF743 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E58D9828BD4066002BF743 /* SettingsRouter.swift */; };
+		D4E58D9E28BD4596002BF743 /* DefaultReadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E58D9D28BD4596002BF743 /* DefaultReadable.swift */; };
 		D4E8A97428BB8BC40043CE8E /* AnimalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E8A97328BB8BC40043CE8E /* AnimalDetailView.swift */; };
 		D4E8A97628BB8BD20043CE8E /* AnimalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E8A97528BB8BD20043CE8E /* AnimalListView.swift */; };
 		D4E8A97828BB8C430043CE8E /* AnimalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E8A97728BB8C430043CE8E /* AnimalDetailViewModel.swift */; };
@@ -66,6 +79,19 @@
 		D45D34A628B920F900547FF3 /* zoo_animals_swiftuiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zoo_animals_swiftuiUITests.swift; sourceTree = "<group>"; };
 		D45D34A828B920F900547FF3 /* zoo_animals_swiftuiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zoo_animals_swiftuiUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D4B42D7828BBF3A800FE8D9D /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D4E58D5028BCB8C6002BF743 /* SettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepository.swift; sourceTree = "<group>"; };
+		D4E58D5428BCB9D8002BF743 /* SettingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingType.swift; sourceTree = "<group>"; };
+		D4E58D5628BCBA64002BF743 /* LengthChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthChoice.swift; sourceTree = "<group>"; };
+		D4E58D5828BCBA71002BF743 /* WeightChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightChoice.swift; sourceTree = "<group>"; };
+		D4E58D7928BCC685002BF743 /* SettingsUserDefaultsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUserDefaultsRepository.swift; sourceTree = "<group>"; };
+		D4E58D7E28BCD0B4002BF743 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		D4E58D8128BCD264002BF743 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		D4E58D8328BCD4AA002BF743 /* SettingsRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepositoryError.swift; sourceTree = "<group>"; };
+		D4E58D8828BCD700002BF743 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D4E58D8A28BCDCF5002BF743 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		D4E58D9628BD3D2D002BF743 /* URL+Wikimedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Wikimedia.swift"; sourceTree = "<group>"; };
+		D4E58D9828BD4066002BF743 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		D4E58D9D28BD4596002BF743 /* DefaultReadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultReadable.swift; sourceTree = "<group>"; };
 		D4E8A97328BB8BC40043CE8E /* AnimalDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailView.swift; sourceTree = "<group>"; };
 		D4E8A97528BB8BD20043CE8E /* AnimalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListView.swift; sourceTree = "<group>"; };
 		D4E8A97728BB8C430043CE8E /* AnimalDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewModel.swift; sourceTree = "<group>"; };
@@ -174,6 +200,61 @@
 			path = "zoo-animals-swiftuiUITests";
 			sourceTree = "<group>";
 		};
+		D4E58D8028BCD24A002BF743 /* User Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				D4E58D8128BCD264002BF743 /* UserDefaultsKeys.swift */,
+			);
+			path = "User Defaults";
+			sourceTree = "<group>";
+		};
+		D4E58D8528BCD670002BF743 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D4E58D8828BCD700002BF743 /* SettingsView.swift */,
+				D4E58D8A28BCDCF5002BF743 /* SettingsViewModel.swift */,
+				D4E58D9828BD4066002BF743 /* SettingsRouter.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D4E58D8628BCD67C002BF743 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				D4E58D5028BCB8C6002BF743 /* SettingsRepository.swift */,
+				D4E58D8328BCD4AA002BF743 /* SettingsRepositoryError.swift */,
+				D4E58D7928BCC685002BF743 /* SettingsUserDefaultsRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		D4E58D8728BCD692002BF743 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D4E58D5428BCB9D8002BF743 /* SettingType.swift */,
+				D4E58D7E28BCD0B4002BF743 /* Settings.swift */,
+				D4E58D5628BCBA64002BF743 /* LengthChoice.swift */,
+				D4E58D5828BCBA71002BF743 /* WeightChoice.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D4E58D9328BD3C67002BF743 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D4E58D9628BD3D2D002BF743 /* URL+Wikimedia.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D4E58D9C28BD458A002BF743 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D4E58D9D28BD4596002BF743 /* DefaultReadable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		D4E8A97F28BBD26C0043CE8E /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,8 +328,8 @@
 		D4EE58AB28BA2E09004650B7 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				D4EE58B128BA2F1F004650B7 /* Animals */,
 				D4EE58AE28BA2EA5004650B7 /* Settings */,
+				D4EE58B128BA2F1F004650B7 /* Animals */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -256,6 +337,9 @@
 		D4EE58AE28BA2EA5004650B7 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				D4E58D8528BCD670002BF743 /* View */,
+				D4E58D8728BCD692002BF743 /* Models */,
+				D4E58D8628BCD67C002BF743 /* Repository */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -282,10 +366,10 @@
 		D4EE58B128BA2F1F004650B7 /* Animals */ = {
 			isa = PBXGroup;
 			children = (
+				D4EE58AF28BA2EAD004650B7 /* List View */,
+				D4EE58B028BA2EF4004650B7 /* Detail View */,
 				D4EE58B328BA2F6F004650B7 /* Models */,
 				D4EE58B228BA2F4B004650B7 /* API */,
-				D4EE58B028BA2EF4004650B7 /* Detail View */,
-				D4EE58AF28BA2EAD004650B7 /* List View */,
 			);
 			path = Animals;
 			sourceTree = "<group>";
@@ -313,6 +397,9 @@
 		D4EE58BA28BA3897004650B7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D4E58D9C28BD458A002BF743 /* Protocols */,
+				D4E58D9328BD3C67002BF743 /* Extensions */,
+				D4E58D8028BCD24A002BF743 /* User Defaults */,
 				D4EE58BB28BA38A1004650B7 /* User Agent */,
 			);
 			path = Common;
@@ -458,20 +545,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4E58D9728BD3D2D002BF743 /* URL+Wikimedia.swift in Sources */,
+				D4E58D9928BD4066002BF743 /* SettingsRouter.swift in Sources */,
 				D4E8A97428BB8BC40043CE8E /* AnimalDetailView.swift in Sources */,
 				D4E8A97828BB8C430043CE8E /* AnimalDetailViewModel.swift in Sources */,
+				D4E58D7F28BCD0B4002BF743 /* Settings.swift in Sources */,
+				D4E58D9E28BD4596002BF743 /* DefaultReadable.swift in Sources */,
+				D4E58D8228BCD264002BF743 /* UserDefaultsKeys.swift in Sources */,
+				D4E58D8B28BCDCF5002BF743 /* SettingsViewModel.swift in Sources */,
+				D4E58D7A28BCC685002BF743 /* SettingsUserDefaultsRepository.swift in Sources */,
 				D45D349328B920F900547FF3 /* zoo_animals_swiftui.xcdatamodeld in Sources */,
 				D45D349028B920F900547FF3 /* Persistence.swift in Sources */,
+				D4E58D5728BCBA64002BF743 /* LengthChoice.swift in Sources */,
+				D4E58D5128BCB8C6002BF743 /* SettingsRepository.swift in Sources */,
 				D4E8A97C28BBD1E10043CE8E /* AnimalRow.swift in Sources */,
 				D4E8A98528BBD3030043CE8E /* AnimalListToolbar.swift in Sources */,
+				D4E58D5928BCBA71002BF743 /* WeightChoice.swift in Sources */,
 				D4EE58C828BA9C03004650B7 /* AnimalFetching.swift in Sources */,
 				D4EE58B928BA3384004650B7 /* AnimalRequestType.swift in Sources */,
+				D4E58D8428BCD4AA002BF743 /* SettingsRepositoryError.swift in Sources */,
 				D4B42D7928BBF3A800FE8D9D /* ContentView.swift in Sources */,
 				D45D348728B920F600547FF3 /* zoo_animals_swiftuiApp.swift in Sources */,
+				D4E58D8928BCD700002BF743 /* SettingsView.swift in Sources */,
 				D4E8A98728BBD4CB0043CE8E /* AnimalPreview.swift in Sources */,
 				D4E8A98B28BBF3350043CE8E /* AnimalDetailRow.swift in Sources */,
 				D4E8A97E28BBD20D0043CE8E /* AnimalRowViewModel.swift in Sources */,
 				D4EE58B528BA2FB3004650B7 /* Animal.swift in Sources */,
+				D4E58D5528BCB9D8002BF743 /* SettingType.swift in Sources */,
 				D4E8A97628BB8BD20043CE8E /* AnimalListView.swift in Sources */,
 				D4EE58B728BA317D004650B7 /* AnimalAPI.swift in Sources */,
 				D4EE58BF28BA3A14004650B7 /* AnimalAPIError.swift in Sources */,

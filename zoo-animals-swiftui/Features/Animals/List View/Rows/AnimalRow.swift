@@ -15,9 +15,10 @@ struct AnimalRow: View {
 
         HStack(alignment: .center, spacing: 16) {
 
-            AsyncImage(url: viewModel.thumbnailURL ?? viewModel.imageURL) { image in
+            AsyncImage(url: viewModel.imageURL) { image in
 
                 image.resizable()
+                    .aspectRatio(contentMode: .fill)
 
             } placeholder: {
                 Image(
@@ -32,6 +33,7 @@ struct AnimalRow: View {
             )
             .cornerRadius(5)
             .padding([.top, .bottom], 6)
+            .shadow(radius: 1)
 
             VStack(spacing: 4) {
 

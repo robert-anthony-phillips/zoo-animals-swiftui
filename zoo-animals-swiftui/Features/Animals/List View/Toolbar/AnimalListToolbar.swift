@@ -10,6 +10,7 @@ import SwiftUI
 struct AnimalListToolBar: ToolbarContent {
 
     let viewModel: AnimalListViewModel
+    let settingsRouter: SettingsRouter
 
     var body: some ToolbarContent {
 
@@ -24,8 +25,9 @@ struct AnimalListToolBar: ToolbarContent {
         }
 
         ToolbarItem(placement: .navigationBarTrailing) {
+
             Button {
-                // action
+                settingsRouter.showSettings = true
             } label: {
                 Image(systemName: "gearshape")
             }
