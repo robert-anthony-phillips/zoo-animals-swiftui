@@ -8,7 +8,7 @@
 import Foundation
 
 /**
- A class intended for mocking a URLSession.
+ A class for mocking a URLSession.
 */
 
 class MockURLProtocol: URLProtocol {

@@ -9,7 +9,11 @@ import SwiftUI
 
 struct AnimalRow: View {
 
+    // MARK: - Properties
+
     let viewModel: AnimalRowViewModel
+
+    // MARK: - View
 
     var body: some View {
 
@@ -29,7 +33,8 @@ struct AnimalRow: View {
             }
             .frame(
                 width: 78,
-                height: 60
+                height: 60,
+                alignment: .top
             )
             .cornerRadius(5)
             .padding([.top, .bottom], 6)

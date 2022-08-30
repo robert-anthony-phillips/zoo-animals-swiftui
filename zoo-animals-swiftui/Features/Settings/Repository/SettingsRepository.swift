@@ -8,7 +8,7 @@
 import Foundation
 
 /**
- A protocol for accessing global settings.
+ A protocol for accessing user settings.
  */
 
 protocol SettingsRepository {

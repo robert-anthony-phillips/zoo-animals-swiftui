@@ -9,12 +9,14 @@ import Foundation
 
 class AnimalDetailViewModel: ObservableObject {
 
+    // MARK: - Properties
+
     let animal: Animal
 
-    @Published var lengthMin = ""
-    @Published var lengthMax = ""
-    @Published var weightMin = ""
-    @Published var weightMax = ""
+    @Published var lengthMin = "Unknown"
+    @Published var lengthMax = "Unknown"
+    @Published var weightMin = "Unknown"
+    @Published var weightMax = "Unknown"
 
     var settingsRepository: SettingsRepository
 
@@ -42,13 +44,17 @@ class AnimalDetailViewModel: ObservableObject {
         animal.diet ?? "Unknown"
     }
 
-    init(animal: Animal,
-         settingsRepository: SettingsRepository = SettingsUserDefaultsRepository()) {
+    // MARK: - Lifecycle
 
+    init(animal: Animal,
+         settingsRepository: SettingsRepository = SettingsUserDefaultsRepository()
+    ) {
         self.animal = animal
         self.settingsRepository = settingsRepository
     }
 }
+
+// MARK: - Public
 
 extension AnimalDetailViewModel {
 
@@ -63,6 +69,8 @@ extension AnimalDetailViewModel {
         weightMax = weightDisplay(weight: animal.weightMax, choice: settings?.weightChoice ?? .pounds)
     }
 }
+
+// MARK: - Private
 
 private extension AnimalDetailViewModel {
 

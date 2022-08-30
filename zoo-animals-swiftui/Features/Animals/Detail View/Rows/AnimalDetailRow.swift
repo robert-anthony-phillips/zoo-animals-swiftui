@@ -9,20 +9,24 @@ import SwiftUI
 
 struct AnimalDetailRow: View {
 
+    // MARK: - Properties
+
     let title: String
     let detail: String
+
+    // MARK: - View
 
     var body: some View {
 
         HStack(alignment: .top) {
 
             Text("\(title):")
-                .font(.headline)
+                .font(.body)
                 .frame(maxWidth: 100, alignment: .leading)
                 .foregroundColor(.accentColor)
 
             Text(detail)
-                .font(.headline)
+                .font(.body)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .foregroundColor(.secondary)
         }

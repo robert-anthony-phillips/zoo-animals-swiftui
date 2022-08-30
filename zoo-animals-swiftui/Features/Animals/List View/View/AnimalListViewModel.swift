@@ -9,19 +9,27 @@ import Foundation
 
 class AnimalListViewModel: ObservableObject {
 
-    @Published var animals = [Animal]()
-    @Published var showSettings = false
+    // MARK: - Properties
 
-    var animalRepository: AnimalFetching
+    @Published var animals = [Animal]()
+    @Published var showFetchAlert = false
+
+    // MARK: - Dependencies
+
+    var animalRepository: AnimalRepository
     var settingsRepository: SettingsRepository
 
-    init(animalRepository: AnimalFetching = AnimalAPI(),
-         settingsRepository: SettingsRepository = SettingsUserDefaultsRepository()) {
+    // MARK: - Lifecycle
 
+    init(animalRepository: AnimalRepository = AnimalAPIRepository(),
+         settingsRepository: SettingsRepository = SettingsUserDefaultsRepository()
+    ) {
         self.animalRepository = animalRepository
         self.settingsRepository = settingsRepository
     }
 }
+
+// MARK: - Public
 
 extension AnimalListViewModel {
 
@@ -29,15 +37,12 @@ extension AnimalListViewModel {
 
         do {
             let settings = try await settingsRepository.read()
-            let result = try await animalRepository.fetchAnimals(count: settings.animalCount)
-            guard let fetchedAnimals = try result.get() as? [Animal] else {
-                throw AnimalAPIError.noData
-            }
-            DispatchQueue.main.async {
-                self.animals = fetchedAnimals
+            let animals = try await animalRepository.animals(count: settings.animalCount)
+            DispatchQueue.main.async { [weak self] in
+                self?.animals = animals
             }
         } catch {
-            
+            showFetchAlert = true
         }
     }
 }

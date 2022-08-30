@@ -7,6 +7,10 @@
 
 import Foundation
 
+/**
+ An enumeration of the user length choices for display within the detail view.
+*/
+
 enum LengthChoice: Int, Codable, CaseIterable {
 
     case feet
@@ -19,6 +23,15 @@ enum LengthChoice: Int, Codable, CaseIterable {
         case .feet: return "ft"
         case .centimeters: return "cm"
         case .meters: return "m"
+        }
+    }
+
+    var displayText: String {
+
+        switch self {
+        case .feet: return "Feet (ft)"
+        case .centimeters: return "Centimetres (cm)"
+        case .meters: return "Metres (m)"
         }
     }
 

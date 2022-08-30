@@ -7,11 +7,19 @@
 
 import Foundation
 
+/**
+ A repository that conforms to SettingsRepository capable of storing and retrieving user settings within UserDefaults.
+ */
+
 class SettingsUserDefaultsRepository {
+
+    // MARK: - Properties
 
     let decoder = JSONDecoder()
     let encoder = JSONEncoder()
     let defaults = UserDefaults.standard
+
+    // MARK: - Lifecycle
 
     init() {
 
@@ -58,6 +66,6 @@ private extension SettingsUserDefaultsRepository {
 
     func setDefaults() {
 
-        UserDefaults.standard.register(defaults: SettingType.keyedDefaults)
+        UserDefaults.standard.register(defaults: Settings.keyedDefaults)
     }
 }

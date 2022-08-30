@@ -7,6 +7,10 @@
 
 import XCTest
 
+/**
+ A helper class for loading JSON data for use within unit tests.
+*/
+
 public typealias JSONMap = [String: Any]
 public typealias JSONMapArray = [[String: Any]]
 

@@ -7,6 +7,10 @@
 
 import Foundation
 
+/**
+ An enumeration of the user weight choices for display within the detail view.
+*/
+
 enum WeightChoice: Int, Codable, CaseIterable {
 
     case pounds
@@ -19,6 +23,15 @@ enum WeightChoice: Int, Codable, CaseIterable {
         case .pounds: return "lbs"
         case .kilograms: return "kg"
         case .stones: return "st"
+        }
+    }
+
+    var displayText: String {
+
+        switch self {
+        case .pounds: return "Pounds (lbs)"
+        case .kilograms: return "Kilograms (kg)"
+        case .stones: return "Stones (st)"
         }
     }
 

@@ -9,9 +9,13 @@ import SwiftUI
 
 struct SettingsView: View {
 
-    @EnvironmentObject var settingsRouter: SettingsRouter
+    // MARK: - Properties
+
+    @StateObject var viewModel: SettingsViewModel
 
     @Environment(\.dismiss) var dismiss
+
+    // MARK: - View
 
     var body: some View {
 
@@ -27,9 +31,9 @@ struct SettingsView: View {
                         .font(.subheadline)
                         .foregroundColor(.accentColor)
 
-                    Picker(title, selection: $settingsRouter.viewModel.settings.lengthChoice) {
+                    Picker(title, selection: $viewModel.settings.lengthChoice) {
                         ForEach(LengthChoice.allCases, id: \.self) {
-                            Text($0.displayUnit)
+                            Text($0.displayText)
                         }
                     }
                     .pickerStyle(.segmented)
@@ -43,9 +47,9 @@ struct SettingsView: View {
                         .font(.subheadline)
                         .foregroundColor(.accentColor)
 
-                    Picker(title, selection: $settingsRouter.viewModel.settings.weightChoice) {
+                    Picker(title, selection: $viewModel.settings.weightChoice) {
                         ForEach(WeightChoice.allCases, id: \.self) {
-                            Text($0.displayUnit)
+                            Text($0.displayText)
                         }
                     }
                     .pickerStyle(.segmented)
@@ -59,7 +63,7 @@ struct SettingsView: View {
                         .font(.subheadline)
                         .foregroundColor(.accentColor)
 
-                    Picker(title, selection: $settingsRouter.viewModel.settings.animalCount) {
+                    Picker(title, selection: $viewModel.settings.animalCount) {
                         ForEach((1..<11).indices, id: \.self) {
                             Text("\($0)")
                         }
@@ -85,11 +89,13 @@ struct SettingsView: View {
     }
 }
 
+// MARK: - PreviewProvider
+
 struct SettingsView_Previews: PreviewProvider {
 
     static var previews: some View {
 
-        SettingsView()
+        SettingsView(viewModel: SettingsViewModel())
             .environmentObject(SettingsViewModel())
     }
 }

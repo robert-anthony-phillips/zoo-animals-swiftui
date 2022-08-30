@@ -7,6 +7,11 @@
 
 import Foundation
 
+/**
+ NOTES:
+ I will often add an additional object as the domain object in addition to the DTO, but intentionally decided to use the same object for both for this simple demonstration.
+*/
+
 struct Animal: Decodable {
 
     let name: String?

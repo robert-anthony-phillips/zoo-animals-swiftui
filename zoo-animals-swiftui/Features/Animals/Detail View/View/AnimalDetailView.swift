@@ -9,8 +9,12 @@ import SwiftUI
 
 struct AnimalDetailView: View {
 
+    // MARK: - Properties
+
     @StateObject var viewModel: AnimalDetailViewModel
-    @StateObject private var settingsRouter = SettingsRouter()
+    @StateObject private var settingsProvider = SettingsProvider()
+
+    // MARK: - View
 
     var body: some View {
 
@@ -31,6 +35,7 @@ struct AnimalDetailView: View {
                 }
                 .aspectRatio(contentMode: .fit)
                 .cornerRadius(5)
+                .shadow(radius: 1)
 
                 VStack(spacing: 4) {
 
@@ -55,17 +60,17 @@ struct AnimalDetailView: View {
                 }
             }
             .padding()
-            .sheet(isPresented: $settingsRouter.showSettings) {
-                SettingsView().onDisappear {
-                    readSettings()
-                }
-            }
+            .sheet(isPresented: $settingsProvider.showSettings, onDismiss: {
+                readSettings()
+            }, content: {
+                settingsProvider.settingsView
+            })
 
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    settingsRouter.showSettings = true
+                    settingsProvider.showSettings = true
                 } label: {
                     Image(systemName: "gearshape")
                 }
@@ -75,6 +80,11 @@ struct AnimalDetailView: View {
             readSettings()
         }
     }
+}
+
+// MARK: - Private
+
+private extension AnimalDetailView {
 
     func readSettings() {
 
@@ -83,6 +93,8 @@ struct AnimalDetailView: View {
         }
     }
 }
+
+// MARK: - PreviewProvider
 
 struct AnimalDetailView_Previews: PreviewProvider {
 

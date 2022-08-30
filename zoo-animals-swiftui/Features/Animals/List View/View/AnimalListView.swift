@@ -9,8 +9,12 @@ import SwiftUI
 
 struct AnimalListView: View {
 
+    // MARK: - Properties
+
     @StateObject private var viewModel = AnimalListViewModel()
-    @StateObject private var settingsRouter = SettingsRouter()
+    @StateObject private var settingsProvider = SettingsProvider()
+
+    // MARK: - View
 
     var body: some View {
 
@@ -26,18 +30,18 @@ struct AnimalListView: View {
                         viewModel: AnimalRowViewModel(animal: animal)
                     )
                 }
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle("Zoo Animals")
             }
             .listStyle(.inset)
-            .navigationTitle("Zoo Animals")
-            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 AnimalListToolBar(
                     viewModel: viewModel,
-                    settingsRouter: settingsRouter
+                    settingsProvider: settingsProvider
                 )
             }
-            .sheet(isPresented: $settingsRouter.showSettings) {
-                SettingsView()
+            .sheet(isPresented: $settingsProvider.showSettings) {
+                settingsProvider.settingsView
             }
             .refreshable {
                 fetchData()
@@ -46,8 +50,19 @@ struct AnimalListView: View {
         .onAppear {
             fetchData()
         }
-        .environmentObject(settingsRouter)
+        .alert(isPresented: $viewModel.showFetchAlert) {
+            Alert(
+                title: Text("Oops!"),
+                message: Text("We were unable to find any animals for you. Please try again later."),
+                dismissButton: .default(Text("OK"))
+            )
+        }
     }
+}
+
+// MARK: - Private
+
+private extension AnimalListView {
 
     func fetchData() {
 
@@ -56,6 +71,8 @@ struct AnimalListView: View {
         }
     }
 }
+
+// MARK: - PreviewProvider
 
 struct AnimalListView_Previews: PreviewProvider {
 

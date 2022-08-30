@@ -47,6 +47,7 @@ private extension SettingsViewModel {
         }
 
         DispatchQueue.main.async { [weak self] in
+            
             self?.settings = settings
             self?.isWriteAllowed = true
         }
