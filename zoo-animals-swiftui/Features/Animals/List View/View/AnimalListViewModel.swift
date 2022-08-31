@@ -14,6 +14,8 @@ class AnimalListViewModel: ObservableObject {
     @Published var animals = [Animal]()
     @Published var showFetchAlert = false
 
+    var showAnimalCountAlert = true
+
     // MARK: - Dependencies
 
     var animalRepository: AnimalRepository

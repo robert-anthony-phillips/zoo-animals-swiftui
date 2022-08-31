@@ -10,6 +10,7 @@ import Foundation
 /**
  NOTES:
  The image URLs provided by the Animals API were too large and slow to load. As most of them were provided by `wikimedia` who provide the ability to add query parameters to the URL, this URL extension returns a substitute URL that resizes all images down to 320 points. This could be viewed as tightly coupling the view models to the `wikimedia` service, but the extension will fail gracefully in the event that the service was changed and future developers failed to notice the use of the extension, but I think it's worth it for the improvement in load times and UX.
+ The value of 320px can be tweaked for higher quality images.
 */
 
 extension URL {

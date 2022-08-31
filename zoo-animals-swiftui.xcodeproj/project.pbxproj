@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D41B21D628BFF3D100DAA108 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41B21D528BFF3D100DAA108 /* LaunchView.swift */; };
+		D41B21D928BFF3E600DAA108 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41B21D828BFF3E600DAA108 /* LaunchViewModel.swift */; };
+		D41B21DC28C0022900DAA108 /* AnimalDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41B21DB28C0022900DAA108 /* AnimalDetailViewModelTests.swift */; };
 		D455FEE228BEB328003AC971 /* AnimalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D455FEE128BEB328003AC971 /* AnimalRepository.swift */; };
 		D455FEE528BEB485003AC971 /* AnimalAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D455FEE428BEB485003AC971 /* AnimalAPIRepository.swift */; };
 		D455FEE728BEB665003AC971 /* AnimalRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D455FEE628BEB665003AC971 /* AnimalRepositoryError.swift */; };
 		D455FEE928BEBBE2003AC971 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D455FEE828BEBBE2003AC971 /* Launch Screen.storyboard */; };
-		D45D348728B920F600547FF3 /* zoo_animals_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45D348628B920F600547FF3 /* zoo_animals_swiftuiApp.swift */; };
+		D45D348728B920F600547FF3 /* ZooAnimalsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45D348628B920F600547FF3 /* ZooAnimalsApp.swift */; };
 		D45D348B28B920F900547FF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D45D348A28B920F900547FF3 /* Assets.xcassets */; };
 		D45D348E28B920F900547FF3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D45D348D28B920F900547FF3 /* Preview Assets.xcassets */; };
 		D45D34A728B920F900547FF3 /* zoo_animals_swiftuiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45D34A628B920F900547FF3 /* zoo_animals_swiftuiUITests.swift */; };
@@ -67,12 +70,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D41B21D528BFF3D100DAA108 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		D41B21D828BFF3E600DAA108 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
+		D41B21DB28C0022900DAA108 /* AnimalDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewModelTests.swift; sourceTree = "<group>"; };
 		D455FEE128BEB328003AC971 /* AnimalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRepository.swift; sourceTree = "<group>"; };
 		D455FEE428BEB485003AC971 /* AnimalAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalAPIRepository.swift; sourceTree = "<group>"; };
 		D455FEE628BEB665003AC971 /* AnimalRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRepositoryError.swift; sourceTree = "<group>"; };
 		D455FEE828BEBBE2003AC971 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D45D348328B920F600547FF3 /* Zoo Animals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zoo Animals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D45D348628B920F600547FF3 /* zoo_animals_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zoo_animals_swiftuiApp.swift; sourceTree = "<group>"; };
+		D45D348628B920F600547FF3 /* ZooAnimalsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooAnimalsApp.swift; sourceTree = "<group>"; };
 		D45D348A28B920F900547FF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D45D348D28B920F900547FF3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D45D349828B920F900547FF3 /* zoo-animals-swiftuiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "zoo-animals-swiftuiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +143,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D41B21D228BFF29100DAA108 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D45D348628B920F600547FF3 /* ZooAnimalsApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D41B21D428BFF39300DAA108 /* Launch View */ = {
+			isa = PBXGroup;
+			children = (
+				D41B21D528BFF3D100DAA108 /* LaunchView.swift */,
+				D41B21D828BFF3E600DAA108 /* LaunchViewModel.swift */,
+			);
+			path = "Launch View";
+			sourceTree = "<group>";
+		};
+		D41B21DA28C0021100DAA108 /* AnimalDetailTests */ = {
+			isa = PBXGroup;
+			children = (
+				D41B21DB28C0022900DAA108 /* AnimalDetailViewModelTests.swift */,
+			);
+			path = AnimalDetailTests;
+			sourceTree = "<group>";
+		};
 		D455FEE328BEB338003AC971 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,9 +201,9 @@
 		D45D348528B920F600547FF3 /* zoo-animals-swiftui */ = {
 			isa = PBXGroup;
 			children = (
-				D45D348628B920F600547FF3 /* zoo_animals_swiftuiApp.swift */,
-				D45D348A28B920F900547FF3 /* Assets.xcassets */,
 				D455FEE828BEBBE2003AC971 /* Launch Screen.storyboard */,
+				D45D348A28B920F900547FF3 /* Assets.xcassets */,
+				D41B21D228BFF29100DAA108 /* App */,
 				D4EE58BA28BA3897004650B7 /* Common */,
 				D4EE58AB28BA2E09004650B7 /* Features */,
 				D45D348C28B920F900547FF3 /* Preview Content */,
@@ -191,6 +222,7 @@
 		D45D349B28B920F900547FF3 /* zoo-animals-swiftuiTests */ = {
 			isa = PBXGroup;
 			children = (
+				D41B21DA28C0021100DAA108 /* AnimalDetailTests */,
 				D4EC4E5928BB74F60041D495 /* AnimalAPITests */,
 				D4EC4E5128BB74640041D495 /* Common */,
 			);
@@ -325,8 +357,8 @@
 		D4EE58AB28BA2E09004650B7 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				D4EE58AE28BA2EA5004650B7 /* Settings */,
 				D4EE58B128BA2F1F004650B7 /* Animals */,
+				D4EE58AE28BA2EA5004650B7 /* Settings */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -363,6 +395,7 @@
 		D4EE58B128BA2F1F004650B7 /* Animals */ = {
 			isa = PBXGroup;
 			children = (
+				D41B21D428BFF39300DAA108 /* Launch View */,
 				D4EE58AF28BA2EAD004650B7 /* List View */,
 				D4EE58B028BA2EF4004650B7 /* Detail View */,
 				D4EE58B328BA2F6F004650B7 /* Models */,
@@ -549,6 +582,7 @@
 				D4E8A97828BB8C430043CE8E /* AnimalDetailViewModel.swift in Sources */,
 				D4E58D7F28BCD0B4002BF743 /* Settings.swift in Sources */,
 				D4E58D8228BCD264002BF743 /* UserDefaultsKeys.swift in Sources */,
+				D41B21D628BFF3D100DAA108 /* LaunchView.swift in Sources */,
 				D4E58D8B28BCDCF5002BF743 /* SettingsViewModel.swift in Sources */,
 				D455FEE528BEB485003AC971 /* AnimalAPIRepository.swift in Sources */,
 				D4E58D7A28BCC685002BF743 /* SettingsUserDefaultsRepository.swift in Sources */,
@@ -562,9 +596,10 @@
 				D4EE58C828BA9C03004650B7 /* AnimalFetching.swift in Sources */,
 				D4EE58B928BA3384004650B7 /* AnimalRequestType.swift in Sources */,
 				D4E58D8428BCD4AA002BF743 /* SettingsRepositoryError.swift in Sources */,
-				D45D348728B920F600547FF3 /* zoo_animals_swiftuiApp.swift in Sources */,
+				D45D348728B920F600547FF3 /* ZooAnimalsApp.swift in Sources */,
 				D4E58D8928BCD700002BF743 /* SettingsView.swift in Sources */,
 				D4E8A98728BBD4CB0043CE8E /* AnimalPreview.swift in Sources */,
+				D41B21D928BFF3E600DAA108 /* LaunchViewModel.swift in Sources */,
 				D4E8A98B28BBF3350043CE8E /* AnimalDetailRow.swift in Sources */,
 				D4E8A97E28BBD20D0043CE8E /* AnimalRowViewModel.swift in Sources */,
 				D4EE58B528BA2FB3004650B7 /* Animal.swift in Sources */,
@@ -582,6 +617,7 @@
 			files = (
 				D4EC4E5328BB74780041D495 /* MockDataLoader.swift in Sources */,
 				D4EC4E5B28BB75340041D495 /* AnimalAPITests.swift in Sources */,
+				D41B21DC28C0022900DAA108 /* AnimalDetailViewModelTests.swift in Sources */,
 				D4EC4E5D28BB76500041D495 /* MockURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

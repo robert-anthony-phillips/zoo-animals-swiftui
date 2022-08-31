@@ -34,7 +34,7 @@ class AnimalAPITests: XCTestCase {
         let sut = AnimalAPI(urlSession: urlSession)
         let animalResult = try await sut.fetchSingleAnimal()
 
-        // THEN = We assert the fetched result is as expected.
+        // THEN - We assert the fetched result is as expected.
         let animal = try XCTUnwrap((animalResult.get() as? [Animal])?.first)
         XCTAssertEqual(animal.name, "Golden-headed Lion Tamarin")
         XCTAssertEqual(animal.id, 76)
@@ -54,7 +54,7 @@ class AnimalAPITests: XCTestCase {
         let animalResult = try await sut.fetchAnimals(count: 10)
         let animalArray = try XCTUnwrap(animalResult.get() as? [Animal])
 
-        // THEN = We assert the fetched result is as expected.
+        // THEN - We assert the fetched result is as expected.
         let animal = try XCTUnwrap(animalArray.first)
         XCTAssertEqual(animal.name, "Eurasian Eagle Owl")
         XCTAssertEqual(animal.id, 68)
